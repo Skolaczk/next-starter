@@ -16,27 +16,21 @@ module.exports = {
         endOfLine: 'auto',
       },
     ],
-    'sort-imports': [2, { ignoreCase: true, ignoreDeclarationSort: true }],
+    'sort-imports': 'off',
     '@typescript-eslint/no-var-requires': 0,
     'simple-import-sort/imports': [
       2,
       {
         groups: [
+          ['^.+\\.s?css$'],
           [
             `^(${require('module').builtinModules.join('|')})(/|$)`,
             '^react',
             '^@?\\w',
           ],
-          [
-            '^layout(/.*|$)',
-            '^common(/.*|$)',
-            '^components(/.*|$)',
-            '^containers(/.*|$)',
-          ],
-          ['^utils(/.*|$)', '^hooks(/.*|$)'],
+          ['^components(/.*|$)'],
+          ['^lib(/.*|$)', '^hooks(/.*|$)'],
           ['^\\.'],
-          ['^models(/.*|$)'],
-          ['^.+\\.s?css$'],
         ],
       },
     ],
