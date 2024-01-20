@@ -9,6 +9,6 @@ const config: Config = {
       mono: ['var(--font-mono)'],
     },
   },
-  plugins: [],
+  plugins: [require('tailwindcss-animate')],
 };
 export default config;

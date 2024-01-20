@@ -4,7 +4,7 @@ import { ThemeToggle } from '@/components/theme-toggle';
 const Home = () => {
   return (
     <div>
-      <h1 className="font-mono">Hello world</h1>
+      <h1 className="animate-in fade-in zoom-in font-mono">Hello world</h1>
       <button>
         <Icons.github className="size-10" />
       </button>
