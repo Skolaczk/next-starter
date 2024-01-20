@@ -9,11 +9,11 @@ export const ThemeToggle = () => {
 
   return (
     <button
-      className="flex gap-2 bg-neutral-100 px-5 py-2 dark:bg-neutral-800"
+      className="flex gap-2 bg-neutral-100 p-3 dark:bg-neutral-800"
       onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
     >
-      <span>{theme === 'light' ? <Icons.moon /> : <Icons.sun />}</span>
-      toggle theme
+      <Icons.sun className="hidden dark:block" />
+      <Icons.moon className="dark:hidden" />
     </button>
   );
 };
