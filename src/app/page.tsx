@@ -8,19 +8,21 @@ const Home = () => {
         Next.js + TypeScript + TailwindCSS + Shadcn/ui
       </h1>
       <p className="text-muted-foreground max-w-2xl">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam eos
-        facere incidunt laborum molestias quasi quia velit voluptates. Amet eos
-        laboriosam quis veniam voluptate. Aspernatur autem consectetur in omnis
-        pariatur.
+        Kickstart your project with a polished foundation. Effortlessly
+        integrate professionally designed components. Easily customizable. Open
+        Source. Your journey to a stunning web application begins here.
       </p>
       <div className="mt-2 flex gap-4">
         <Button asChild>
-          <a href="https://github.com/Skolaczk/next-playground/blob/main/README.md">
+          <a
+            href="https://github.com/Skolaczk/next-starter/blob/main/README.md"
+            target="_blank"
+          >
             Get Started
           </a>
         </Button>
         <Button variant="outline" asChild>
-          <a href="https://github.com/Skolaczk/next-playground">
+          <a href="https://github.com/Skolaczk/next-starter" target="_blank">
             <Icons.github className="mr-2 size-4" /> Github
           </a>
         </Button>
