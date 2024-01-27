@@ -6,10 +6,13 @@ describe('Homepage', () => {
   it('renders the Components', () => {
     render(<Home />);
 
-    const helloWorldElement = screen.getByText('Hello world', {
-      selector: 'h1',
-    });
+    const heading = screen.getByText(
+      'Next.js + TypeScript + TailwindCSS + Shadcn/ui',
+      {
+        selector: 'h1',
+      }
+    );
 
-    expect(helloWorldElement).toBeInTheDocument();
+    expect(heading).toBeInTheDocument();
   });
 });
