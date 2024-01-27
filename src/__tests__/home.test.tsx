@@ -7,7 +7,7 @@ describe('Homepage', () => {
     render(<Home />);
 
     const heading = screen.getByText(
-      'Next.js + TypeScript + TailwindCSS + Shadcn/ui1',
+      'Next.js + TypeScript + TailwindCSS + Shadcn/ui',
       {
         selector: 'h1',
       }
