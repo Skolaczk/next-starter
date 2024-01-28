@@ -13,8 +13,10 @@ export const siteConfig = {
     'husky',
     'lint-staged',
     'Jest Tests',
+    'Github actions',
     'Web Development',
     'Starter Template',
+    'Next.js starter',
     'Frontend',
     'React',
     'JavaScript',
@@ -24,5 +26,5 @@ export const siteConfig = {
     'Efficient Development',
     'Code Quality',
   ],
-  url: process.env.NEXT_PUBLIC_SITE_URL || '',
+  url: process.env.NEXT_PUBLIC_SITE_URL || 'https://example.com',
 };
