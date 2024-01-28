@@ -5,7 +5,7 @@
 - 📘 Typescript
 - 🎨 TailwindCSS - Class sorting, merging and linting
 - 🛠️ Shadcn/ui - Customizable UI components
-- 🧪 Jest and React Testing Library - Configured for unit testing
+- 🧪 Jest & React Testing Library - Configured for unit testing
 - 📈 Absolute Import & Path Alias - Import components using `@/` prefix
 - 💅 Prettier - Code formatter
 - 🧹 Eslint - Code linting tool
@@ -39,7 +39,14 @@
 npm install
 ```
 
-### 3. Run the dev server
+### 3. Prepare husky
+It is required if you want husky to work
+
+```bash
+npm run prepare
+```
+
+### 4. Run the dev server
 
 You can start the server using this command:
 
@@ -48,3 +55,8 @@ npm run dev
 ```
 
 and open http://localhost:3000/ to see this app.
+
+
+If you liked the project, I will appreciate if you leave a star. 🌟😊
+
+Made by <a href="https://michalskolak.netlify.app/">Michał Skolak</a> 

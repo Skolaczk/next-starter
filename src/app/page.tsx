@@ -15,7 +15,7 @@ const Home = () => {
       <div className="mt-2 flex gap-4">
         <Button asChild>
           <a
-            href="https://github.com/Skolaczk/next-starter/blob/main/README.md"
+            href="https://github.com/Skolaczk/next-starter/blob/main/README.md#getting-started"
             target="_blank"
           >
             Get Started
