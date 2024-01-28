@@ -4,6 +4,8 @@ export const siteConfig = {
     'It is a Next.js starter template powered by TypeScript, styled with Tailwind CSS and Shadcn/ui. Features include Dark Mode, SEO optimization, and pre-configured eslint, prettier, husky, and lint-staged settings. Jumpstart your project with efficiency and style.',
   keywords: [
     'Next.js',
+    'Next.js starter',
+    'Next.js boilerplate',
     'Tailwind CSS',
     'TypeScript',
     'Dark Mode',
@@ -16,7 +18,6 @@ export const siteConfig = {
     'Github actions',
     'Web Development',
     'Starter Template',
-    'Next.js starter',
     'Frontend',
     'React',
     'JavaScript',
@@ -27,4 +28,6 @@ export const siteConfig = {
     'Code Quality',
   ],
   url: process.env.NEXT_PUBLIC_SITE_URL || 'https://example.com',
+  googleSiteVerificationId:
+    process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION_ID || '',
 };
