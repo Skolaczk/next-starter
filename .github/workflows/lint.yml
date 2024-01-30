@@ -26,5 +26,11 @@ jobs:
       - name: Prettier
         run: npm run format:check
 
-      - name: Tests
+      - name: Unit tests
         run: npm run test
+
+      - name: Install Playwright Browsers
+        run: npx playwright install --with-deps
+
+      - name: e2e tests
+        run: npm run e2e
