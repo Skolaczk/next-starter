@@ -17,6 +17,7 @@ export const UserDropdown = ({ session }: { session: Session }) => {
     <DropdownMenu>
       <DropdownMenuTrigger>
         <Image
+          className="overflow-hidden rounded-full"
           src={`${session.user?.image}`}
           alt={`${session.user?.name}`}
           width={32}
