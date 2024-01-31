@@ -2,11 +2,11 @@ import Link from 'next/link';
 import { getServerSession } from 'next-auth';
 
 import { authOptions } from '@/app/api/auth/[...nextauth]/auth-options';
-import { SignInButton } from '@/components/sign-in-button';
-import { ThemeToggle } from '@/components/theme-toggle';
-import { UserDropdown } from '@/components/user-dropdown';
+import { SignInButton } from '@/components/navbar/sign-in-button';
+import { ThemeToggle } from '@/components/navbar/theme-toggle';
+import { UserDropdown } from '@/components/navbar/user-dropdown';
 
-export const Header = async () => {
+export const Navbar = async () => {
   const session = await getServerSession(authOptions);
 
   return (
