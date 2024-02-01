@@ -12,6 +12,7 @@ export const ThemeToggle = () => {
     <Button
       variant="ghost"
       size="icon"
+      aria-label="theme toggle"
       onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
     >
       <Icons.sun className="hidden dark:block" />
