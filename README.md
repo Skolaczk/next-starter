@@ -69,7 +69,7 @@ npm run dev
 
 and open http://localhost:3000/ to see this app.
 
-### ⚙️ Scripts overview
+## ⚙️ Scripts overview
 The following scripts are available in the `package.json`:
 - `dev`: Run development server
 - `build`: Build the app
@@ -87,7 +87,7 @@ The following scripts are available in the `package.json`:
 - `postbuild`: Generate sitemap
 - `prepare`: Install Husky for managing Git hooks
 
-### ❤️ Support
+## ❤️ Support
 
 If you liked the project, I will appreciate if you leave a star. 🌟😊
 
