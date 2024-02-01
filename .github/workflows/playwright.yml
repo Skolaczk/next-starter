@@ -1,13 +1,16 @@
-name: e2e tests
-
+name: Playwright Tests
 on:
-  pull_request:
+  push:
     branches:
       - main
+      - master
+      - develop
+  pull_request: null
+  workflow_dispatch: null
 
 jobs:
-  tests_e2e:
-    name: Run end-to-end tests
+  test:
+    timeout-minutes: 60
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
