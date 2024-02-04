@@ -6,6 +6,8 @@
 - 🎨 TailwindCSS - Class sorting, merging and linting
 - 🛠️ Shadcn/ui - Customizable UI components
 - 🔒 Next-auth - Easy authentication library for Next.js (GitHub provider)
+- 📋 React-hook-form - Manage your forms easy and efficient 
+- 🔍 Zod - Schema validation library
 - 🧪 Jest & React Testing Library - Configured for unit testing
 - 🎭 Playwright - Configured for e2e testing
 - 📈 Absolute Import & Path Alias - Import components using `@/` prefix
@@ -17,7 +19,7 @@
 - 🗺️ Sitemap & robots.txt - With next-sitemap
 - 📝 Commitlint - Lint your git commits
 - 🤖 Github actions - Lint your code on PR
-- ⚙️ T3-env - Menage your environment variables
+- ⚙️ T3-env - Manage your environment variables
 - 💯 Perfect Lighthouse score
 
 ## 🚀 Deployment

@@ -1,3 +1,4 @@
+import { HeroForm } from '@/components/form';
 import { Icons } from '@/components/icons';
 import { Button } from '@/components/ui/button';
 
@@ -26,6 +27,9 @@ const Home = () => {
             <Icons.github className="mr-2 size-4" /> Github
           </a>
         </Button>
+      </div>
+      <div className="mt-5">
+        <HeroForm />
       </div>
     </section>
   );
