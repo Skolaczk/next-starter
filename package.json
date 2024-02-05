@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbo",
-    "build": "next build",
+    "dev": "prisma generate && next dev --turbo",
+    "build": "prisma generate && prisma db push && next build",
     "start": "next start",
     "preview": "next build && next start",
     "lint": "next lint",
