@@ -1,4 +1,5 @@
-![thumbnail](https://github.com/Skolaczk/next-starter/assets/76774237/5ca2bfd8-019e-4cfa-9fec-209179cf4837)
+![thumbnail](https://github.com/Skolaczk/next-starter/assets/76774237/44b552ff-43aa-441f-b1d0-de9bdfc2a73f)
+
 ## 🎉 Features
 - 🚀 Next.js 14 (App router)
 - ⚛️ React 18
@@ -6,6 +7,7 @@
 - 🎨 TailwindCSS - Class sorting, merging and linting
 - 🛠️ Shadcn/ui - Customizable UI components
 - 🔒 Next-auth - Easy authentication library for Next.js (GitHub provider)
+- 🛡️ Prisma - ORM for node.js
 - 📋 React-hook-form - Manage your forms easy and efficient 
 - 🔍 Zod - Schema validation library
 - 🧪 Jest & React Testing Library - Configured for unit testing
@@ -88,6 +90,14 @@ The following scripts are available in the `package.json`:
 - `e2e:ui`: Run end-to-end tests with UI
 - `postbuild`: Generate sitemap
 - `prepare`: Install Husky for managing Git hooks
+
+## 🤝 Contribution
+To contribute, please follow these steps:
+1. Fork the repository.
+2. Create a new branch.
+3. Make your changes, and commit them.
+4. Push your changes to the forked repository.
+5. Create a pull request.
 
 ## ❤️ Support
 
