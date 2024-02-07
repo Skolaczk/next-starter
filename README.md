@@ -1,4 +1,14 @@
-![thumbnail](https://github.com/Skolaczk/next-starter/assets/76774237/44b552ff-43aa-441f-b1d0-de9bdfc2a73f)
+<a href="https://next-starter-skolaczk.vercel.app/">
+<img src="https://github.com/Skolaczk/next-starter/assets/76774237/44b552ff-43aa-441f-b1d0-de9bdfc2a73f" alt="thubnail">
+</a>
+<p align="center">
+  <a href="#-features"><strong>Features</strong></a> ·
+  <a href="#-deployment"><strong>Deployment</strong></a> ·
+  <a href="#-getting-started"><strong>Getting started</strong></a> ·
+  <a href="#%EF%B8%8F-scripts-overview"><strong>Scripts overview</strong></a> ·
+  <a href="#-contribution"><strong>Contribution</strong></a> ·
+  <a href="#%EF%B8%8F-support"><strong>Support</strong></a>
+</p>
 
 ## 🎉 Features
 - 🚀 Next.js 14 (App router)
@@ -54,7 +64,7 @@ npm install
 ```
 
 ### 3. Set up environment variables
-Create `.env.local` file and set env variables from `.env.example` file.
+Create `.env` file and set env variables from `.env.example` file.
 
 ### 4. Prepare husky
 It is required if you want husky to work
