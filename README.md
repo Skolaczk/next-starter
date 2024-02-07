@@ -4,10 +4,10 @@
 <p align="center">
   <a href="#-features"><strong>Features</strong></a> ·
   <a href="#-deployment"><strong>Deployment</strong></a> ·
-  <a href="#-getting-srarted"><strong>Getting srarted</strong></a> ·
-  <a href="#-scripts-overview"><strong>Scripts overview</strong></a> ·
+  <a href="#-getting-started"><strong>Getting started</strong></a> ·
+  <a href="#%EF%B8%8F-scripts-overview"><strong>Scripts overview</strong></a> ·
   <a href="#-contribution"><strong>Contribution</strong></a> ·
-  <a href="#-support"><strong>Support</strong></a>
+  <a href="#%EF%B8%8F-support"><strong>Support</strong></a>
 </p>
 
 ## 🎉 Features
