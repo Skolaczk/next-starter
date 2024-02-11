@@ -11,7 +11,7 @@ const Home = () => {
       <p className="text-muted-foreground max-w-2xl">
         A Next.js starter template, packed with features like TypeScript,
         Tailwind CSS, Next-auth, Eslint, testing tools and more. Jumpstart your
-        project with efficiency and style.
+        project with efficiency and style. test
       </p>
       <div className="mt-1">
         <HeroForm />
