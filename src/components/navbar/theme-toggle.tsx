@@ -15,8 +15,8 @@ export const ThemeToggle = () => {
       aria-label="theme toggle"
       onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
     >
-      <Icons.sun className="hidden dark:block" />
-      <Icons.moon className="dark:hidden" />
+      <Icons.sun className="dark:hidden" />
+      <Icons.moon className="hidden dark:block" />
     </Button>
   );
 };
