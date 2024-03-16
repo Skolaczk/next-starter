@@ -83,6 +83,26 @@ npm run dev
 
 and open http://localhost:3000/ to see this app.
 
+## 📁 Project structure
+
+```bash
+.
+├── .github                         # GitHub folder
+├── .husky                          # Husky configuration
+├── prisma                          # Prisma schema and migrations
+├── public                          # Public assets folder
+└── src
+    ├── __tests__                   # Unit and e2e tests
+    ├── actions                     # Server actions
+    ├── app                         # Next JS App (App Router)
+    ├── components                  # React components
+    ├── hooks                       # Custom hooks
+    ├── lib                         # Functions and utilities
+    ├── styles                      # Styles folder
+    ├── types                       # Type definitions
+    └── env.mjs                     # Env variables config file
+```
+
 ## ⚙️ Scripts overview
 The following scripts are available in the `package.json`:
 - `dev`: Run development server
