@@ -16,6 +16,7 @@
 - 📘 Typescript
 - 🎨 TailwindCSS - Class sorting, merging and linting
 - 🛠️ Shadcn/ui - Customizable UI components
+- 💵 Stripe - Payment handler
 - 🔒 Next-auth - Easy authentication library for Next.js (GitHub provider)
 - 🛡️ Prisma - ORM for node.js
 - 📋 React-hook-form - Manage your forms easy and efficient 
