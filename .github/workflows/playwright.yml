@@ -12,11 +12,11 @@ jobs:
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
+    env:
+      APP_URL: ${{ secrets.APP_URL }}
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
-        with:
-          APP_URL: ${{ secrets.APP_URL }}
       - name: Install dependencies
         run: npm ci
       - name: Install playwright browsers
