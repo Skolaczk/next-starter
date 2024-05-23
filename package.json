@@ -51,7 +51,8 @@
     "react-hook-form": "^7.51.4",
     "stripe": "^15.6.0",
     "tailwind-merge": "^2.3.0",
-    "zod": "^3.23.8"
+    "zod": "^3.23.8",
+    "@inlang/paraglide-next": "0.2.4"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.3.0",
@@ -82,6 +83,7 @@
     "prisma": "^5.14.0",
     "tailwindcss": "^3.4.3",
     "tailwindcss-animate": "^1.0.7",
-    "typescript": "^5"
+    "typescript": "^5",
+    "@inlang/paraglide-js": "1.9.1"
   }
 }

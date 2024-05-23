@@ -4,6 +4,7 @@ import { useTheme } from 'next-themes';
 
 import { Icons } from '@/components/icons';
 import { Button } from '@/components/ui/button';
+import * as m from '@/paraglide/messages';
 
 export const ThemeToggle = () => {
   const { theme, setTheme } = useTheme();
@@ -12,7 +13,7 @@ export const ThemeToggle = () => {
     <Button
       variant="ghost"
       size="icon"
-      aria-label="theme toggle"
+      aria-label={m.theme_toggle_label()}
       onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
     >
       <Icons.sun className="dark:hidden" />
