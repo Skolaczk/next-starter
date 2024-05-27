@@ -5,7 +5,7 @@ import type { AvailableLanguageTag } from '@/paraglide/runtime';
 const strategy = PrefixStrategy<AvailableLanguageTag>({
   prefixDefault: 'never',
 
-  // dont' generate alternate routes for the api
+  // don't generate alternate routes for the api
   exclude: (pathname) => {
     return pathname.startsWith('/api/') || pathname === '/api';
   },

@@ -7,6 +7,8 @@
     "upgrade_to_pro_cta": "Upgrade to pro",
     "log_out": "Log out",
     "you_are_a_pro": "You are pro!",
+    "input_placeholder": "Type your name ...",
+    "submit_form": "Submit",
     "meta_title": "Next.js Starter",
     "meta_description": "A Next.js starter template, packed with features like TypeScript, Tailwind CSS, Next-auth, Eslint, testing tools and more. Jumpstart your project with efficiency and style.",
     "meta_keyword_nextjs": "Next.js",

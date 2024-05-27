@@ -1,3 +1,6 @@
+'use client';
+
+import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -12,18 +15,22 @@ import {
 } from '@/paraglide/runtime';
 
 const LanguageLabel: Record<AvailableLanguageTag, string> = {
-  en: '🇬🇧 English',
+  en: 'English',
+  pl: 'Polski',
 };
 
 export const LanguageSwitcher = () => {
-  const currentLanguageLabel = LanguageLabel[languageTag()];
   const router = useRouter();
   const pathname = usePathname();
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger>{currentLanguageLabel}</DropdownMenuTrigger>
-      <DropdownMenuContent>
+      <DropdownMenuTrigger asChild>
+        <Button variant="secondary" size="icon">
+          {languageTag().toUpperCase()}
+        </Button>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent align="end">
         {availableLanguageTags.map((locale) => (
           <DropdownMenuItem
             key={locale}
