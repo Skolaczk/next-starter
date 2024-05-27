@@ -33,6 +33,7 @@
   },
   "dependencies": {
     "@hookform/resolvers": "^3.4.0",
+    "@inlang/paraglide-next": "0.2.4",
     "@next-auth/prisma-adapter": "^1.0.7",
     "@prisma/client": "^5.14.0",
     "@radix-ui/react-dropdown-menu": "^2.0.6",
@@ -52,12 +53,12 @@
     "react-hook-form": "^7.51.4",
     "stripe": "^15.6.0",
     "tailwind-merge": "^2.3.0",
-    "zod": "^3.23.8",
-    "@inlang/paraglide-next": "0.2.4"
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.3.0",
     "@commitlint/config-conventional": "^19.2.2",
+    "@inlang/paraglide-js": "1.9.1",
     "@playwright/test": "^1.44.0",
     "@testing-library/jest-dom": "^6.4.5",
     "@testing-library/react": "^15.0.7",
@@ -84,7 +85,6 @@
     "prisma": "^5.14.0",
     "tailwindcss": "^3.4.3",
     "tailwindcss-animate": "^1.0.7",
-    "typescript": "^5",
-    "@inlang/paraglide-js": "1.9.1"
+    "typescript": "^5"
   }
 }
