@@ -17,6 +17,7 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { env } from '@/env.mjs';
+import * as m from '@/paraglide/messages';
 
 export const UserDropdown = ({ session: { user } }: { session: Session }) => {
   const [isPending, setIsPending] = useState(false);
@@ -44,7 +45,7 @@ export const UserDropdown = ({ session: { user } }: { session: Session }) => {
         />
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
-        <DropdownMenuLabel>My Account</DropdownMenuLabel>
+        <DropdownMenuLabel>{m.my_account()}</DropdownMenuLabel>
         <DropdownMenuSeparator />
         <div className="flex flex-col items-center justify-center p-2">
           <Image
@@ -61,20 +62,20 @@ export const UserDropdown = ({ session: { user } }: { session: Session }) => {
             className="w-64"
           >
             {user?.isActive ? (
-              'You are pro!'
+              m.you_are_a_pro()
             ) : (
               <>
                 {isPending && (
                   <Icons.loader className="mr-2 size-4 animate-spin" />
                 )}
-                Upgrade to pro
+                {m.upgrade_to_pro_cta()}
               </>
             )}
           </Button>
         </div>
         <DropdownMenuSeparator />
         <DropdownMenuItem onClick={() => signOut()}>
-          <Icons.logOut className="mr-2 size-4" /> <span>Log out</span>
+          <Icons.logOut className="mr-2 size-4" /> <span>{m.log_out()}</span>
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

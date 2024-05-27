@@ -1,6 +1,7 @@
 import '@/styles/globals.css';
 
 import { PropsWithChildren } from 'react';
+import { LanguageProvider } from '@inlang/paraglide-next';
 import type { Metadata } from 'next';
 
 import { Footer } from '@/components/footer';
@@ -10,15 +11,16 @@ import { Toaster } from '@/components/ui/toaster';
 import { siteConfig } from '@/lib/constant';
 import { fonts } from '@/lib/fonts';
 import { cn } from '@/lib/utils';
+import { languageTag } from '@/paraglide/runtime.js';
 
-export const metadata: Metadata = {
-  metadataBase: new URL(siteConfig.url),
+export const generateMetadata = (): Metadata => ({
+  metadataBase: new URL(siteConfig.url()),
   title: {
-    default: siteConfig.title,
-    template: `%s | ${siteConfig.title}`,
+    default: siteConfig.title(),
+    template: `%s | ${siteConfig.title()}`,
   },
-  description: siteConfig.description,
-  keywords: siteConfig.keywords,
+  description: siteConfig.description(),
+  keywords: siteConfig.keywords(),
   robots: { index: true, follow: true },
   icons: {
     icon: '/favicon/favicon.ico',
@@ -26,37 +28,39 @@ export const metadata: Metadata = {
     apple: '/favicon/apple-touch-icon.png',
   },
   verification: {
-    google: siteConfig.googleSiteVerificationId,
+    google: siteConfig.googleSiteVerificationId(),
   },
   openGraph: {
-    url: siteConfig.url,
-    title: siteConfig.title,
-    description: siteConfig.description,
-    siteName: siteConfig.title,
+    url: siteConfig.url(),
+    title: siteConfig.title(),
+    description: siteConfig.description(),
+    siteName: siteConfig.title(),
     images: '/opengraph-image.png',
     type: 'website',
-    locale: 'en_US',
+    locale: languageTag(),
   },
   twitter: {
     card: 'summary_large_image',
-    title: siteConfig.title,
-    description: siteConfig.description,
+    title: siteConfig.title(),
+    description: siteConfig.description(),
     images: '/opengraph-image.png',
   },
-};
+});
 
 const RootLayout = ({ children }: PropsWithChildren) => {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={cn('min-h-screen font-sans', fonts)}>
-        <ThemeProvider attribute="class">
-          <Navbar />
-          {children}
-          <Footer />
-          <Toaster />
-        </ThemeProvider>
-      </body>
-    </html>
+    <LanguageProvider>
+      <html lang={languageTag()} suppressHydrationWarning>
+        <body className={cn('min-h-screen font-sans', fonts)}>
+          <ThemeProvider attribute="class">
+            <Navbar />
+            {children}
+            <Footer />
+            <Toaster />
+          </ThemeProvider>
+        </body>
+      </html>
+    </LanguageProvider>
   );
 };
 

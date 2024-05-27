@@ -34,6 +34,7 @@
 - 🤖 Github actions - Lint your code on PR
 - ⚙️ T3-env - Manage your environment variables
 - 💯 Perfect Lighthouse score
+- 🌐 I18n with Paraglide
 
 ## 🚀 Deployment
 Easily deploy your Next.js app with <a href="https://vercel.com/">Vercel</a> by clicking the button below:
@@ -101,6 +102,8 @@ and open http://localhost:3000/ to see this app.
     ├── lib                         # Functions and utilities
     ├── styles                      # Styles folder
     ├── types                       # Type definitions
+    ├── messages                    # Messages for i18n 
+    ├── paraglide                   # (generated) compiled i18n messages 
     └── env.mjs                     # Env variables config file
 ```
 
