@@ -6,8 +6,8 @@ import type { Metadata } from 'next';
 
 import { Footer } from '@/components/footer';
 import { Navbar } from '@/components/navbar/navbar';
-import { ThemeToggle } from '@/components/navbar/theme-toggle';
 import { ThemeProvider } from '@/components/theme-provider';
+import { ThemeSwitcher } from '@/components/theme-switcher';
 import { Toaster } from '@/components/ui/toaster';
 import { siteConfig } from '@/lib/constant';
 import { fonts } from '@/lib/fonts';
@@ -56,7 +56,7 @@ const RootLayout = ({ children }: PropsWithChildren) => {
           <ThemeProvider attribute="class">
             <Navbar />
             {children}
-            <ThemeToggle />
+            <ThemeSwitcher className="absolute bottom-5 right-5 z-10" />
             <Footer />
             <Toaster />
           </ThemeProvider>
