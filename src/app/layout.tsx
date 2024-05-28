@@ -6,6 +6,7 @@ import type { Metadata } from 'next';
 
 import { Footer } from '@/components/footer';
 import { Navbar } from '@/components/navbar/navbar';
+import { ThemeToggle } from '@/components/navbar/theme-toggle';
 import { ThemeProvider } from '@/components/theme-provider';
 import { Toaster } from '@/components/ui/toaster';
 import { siteConfig } from '@/lib/constant';
@@ -55,6 +56,7 @@ const RootLayout = ({ children }: PropsWithChildren) => {
           <ThemeProvider attribute="class">
             <Navbar />
             {children}
+            <ThemeToggle />
             <Footer />
             <Toaster />
           </ThemeProvider>

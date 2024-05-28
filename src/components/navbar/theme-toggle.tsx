@@ -11,7 +11,8 @@ export const ThemeToggle = () => {
 
   return (
     <Button
-      variant="ghost"
+      className="absolute bottom-5 right-5 z-10"
+      variant="secondary"
       size="icon"
       aria-label={m.theme_toggle_label()}
       onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
