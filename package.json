@@ -17,7 +17,7 @@
     "e2e": "playwright test",
     "e2e:ui": "playwright test --ui",
     "postbuild": "next-sitemap --config next-sitemap.config.js",
-    "prepare": "husky install",
+    "prepare": "husky",
     "postinstall": "paraglide-js compile --project ./project.inlang --outdir ./src/paraglide"
   },
   "husky": {
