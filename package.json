@@ -16,7 +16,6 @@
     "test:watch": "jest --watchAll",
     "e2e": "playwright test",
     "e2e:ui": "playwright test --ui",
-    "postbuild": "next-sitemap --config next-sitemap.config.js",
     "prepare": "husky",
     "postinstall": "paraglide-js compile --project ./project.inlang --outdir ./src/paraglide"
   },
@@ -79,7 +78,6 @@
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
     "lint-staged": "^15.2.7",
-    "next-sitemap": "^4.2.3",
     "postcss": "^8",
     "prettier": "^3.3.2",
     "prisma": "^5.16.1",
