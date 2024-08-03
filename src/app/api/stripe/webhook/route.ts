@@ -22,7 +22,7 @@ const webhookHandler = async (req: NextRequest) => {
       return NextResponse.json(
         {
           error: {
-            message: 'Webhook Error',
+            message: `Webhook Error - ${err}`,
           },
         },
         { status: 400 }
