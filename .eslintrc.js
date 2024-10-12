@@ -7,8 +7,9 @@ module.exports = {
     'plugin:prettier/recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:tailwindcss/recommended',
+    'plugin:jsx-a11y/recommended',
   ],
-  plugins: ['simple-import-sort', 'prettier', '@typescript-eslint'],
+  plugins: ['simple-import-sort', 'prettier', '@typescript-eslint', 'jsx-a11y'],
   rules: {
     'prettier/prettier': [
       'error',
@@ -19,6 +20,7 @@ module.exports = {
     'sort-imports': 'off',
     'tailwindcss/no-custom-classname': 'off',
     '@typescript-eslint/no-var-requires': 'off',
+    '@typescript-eslint/no-require-imports': 'off',
     'simple-import-sort/imports': [
       2,
       {
