@@ -11,7 +11,7 @@
 </p>
 
 ## 🎉 Features
-- 🚀 Next.js 14 (App router)
+- 🚀 Next.js 15 (App router)
 - ⚛️ React 18
 - 📘 Typescript
 - 🎨 TailwindCSS - Class sorting, merging and linting
