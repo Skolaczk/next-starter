@@ -12,7 +12,7 @@
 
 ## 🎉 Features
 - 🚀 Next.js 15 (App router)
-- ⚛️ React 18
+- ⚛️ React 19
 - 📘 Typescript
 - 🎨 TailwindCSS - Class sorting, merging and linting
 - 🛠️ Shadcn/ui - Customizable UI components
