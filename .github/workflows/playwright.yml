@@ -23,15 +23,15 @@ jobs:
       STRIPE_SUBSCRIPTION_PRICE_ID: ${{ secrets.STRIPE_SUBSCRIPTION_PRICE_ID}}
       STRIPE_WEBHOOK_SECRET_KEY: ${{ secrets.STRIPE_WEBHOOK_SECRET_KEY }}
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
       - name: Install dependencies
         run: npm i
       - name: Install playwright browsers
         run: npx playwright install --with-deps
       - name: Run tests
         run: npm run e2e
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: playwright-report
