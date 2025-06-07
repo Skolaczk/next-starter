@@ -1,17 +1,23 @@
 "use client";
 
 import { useTheme } from "next-themes";
+import { ComponentProps } from "react";
 
 import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
-export const ThemeSwitcher = () => {
+type ThemeSwitcherProps = {
+  className?: ComponentProps<"button">["className"];
+};
+
+export const ThemeSwitcher = ({ className }: ThemeSwitcherProps) => {
   const { theme, setTheme } = useTheme();
 
   return (
     <Button
       onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-      className="cursor-pointer"
+      className={cn("cursor-pointer", className)}
       size="icon"
       variant="outline"
       aria-label="Toggle theme"

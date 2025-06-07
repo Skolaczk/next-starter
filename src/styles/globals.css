@@ -118,3 +118,7 @@
     @apply bg-background text-foreground;
   }
 }
+
+@utility container {
+  @apply max-w-screen-xl mx-auto p-5;
+}

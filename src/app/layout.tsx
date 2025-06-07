@@ -4,11 +4,12 @@ import type { Metadata } from "next";
 import { PropsWithChildren } from "react";
 
 import { ThemeProvider } from "@/components/theme-provider";
+import { ThemeSwitcher } from "@/components/theme-switcher";
 import { fonts } from "@/lib/fonts";
 import { siteConfig } from "@/lib/site-config";
 import { cn } from "@/lib/utils";
 
-export const generateMetadata = (): Metadata => ({
+export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
     default: siteConfig.title,
@@ -39,13 +40,16 @@ export const generateMetadata = (): Metadata => ({
     description: siteConfig.description,
     images: "/opengraph-image.png",
   },
-});
+};
 
 const RootLayout = ({ children }: PropsWithChildren) => {
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={cn("min-h-screen font-sans", fonts)}>
-        <ThemeProvider attribute="class">{children}</ThemeProvider>
+        <ThemeProvider attribute="class">
+          {children}
+          <ThemeSwitcher className="absolute right-5 bottom-5 z-10" />
+        </ThemeProvider>
       </body>
     </html>
   );
