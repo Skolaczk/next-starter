@@ -1,9 +1,13 @@
 import Link from "next/link";
 
+import { AuthControls } from "@/components/auth-controls";
 import { Icons } from "@/components/icons";
-import { Button, buttonVariants } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
+import { auth } from "@/lib/auth";
 
-const HomePage = () => {
+const HomePage = async () => {
+  const session = await auth();
+
   return (
     <>
       <header className="w-full border-b">
@@ -12,7 +16,7 @@ const HomePage = () => {
             next-starter
           </Link>
           <div className="flex items-center gap-2">
-            <Button className="cursor-pointer">Sign in</Button>
+            <AuthControls session={session} />
           </div>
         </div>
       </header>
