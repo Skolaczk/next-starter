@@ -1,0 +1,62 @@
+name: Bug report
+description: Something isn’t working as expected.
+title: "[Bug] <short description>"
+labels: ["bug", "needs triage"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Thanks for taking the time to fill out this bug report!**
+        Please complete every section—issues with missing information may be closed.
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: A clear and concise description of the problem.
+      placeholder: Tell us what went wrong…
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: List the exact steps so we can reproduce the issue.
+      placeholder: |
+        1. Go to…
+        2. Click on…
+        3. Scroll down to…
+        4. See error
+      render: bash
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      placeholder: It should…
+    validations:
+      required: true
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots or recordings
+      description: Drag & drop images, GIFs or videos here (optional).
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: |
+        e.g. OS, browser, device, Node version, package versions, etc.
+      placeholder: "Windows 11, Chrome 124, Node 20.11, Next 15.3.3"
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant log output
+      description: Copy & paste any console or server logs. **Use a code block!**
+      render: shell
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional context
+      description: Anything else we should know?

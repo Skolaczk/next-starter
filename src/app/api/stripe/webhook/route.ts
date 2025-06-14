@@ -1,14 +1,15 @@
-import { NextRequest, NextResponse } from 'next/server';
-import Stripe from 'stripe';
+import { eq } from "drizzle-orm";
+import { NextRequest, NextResponse } from "next/server";
+import Stripe from "stripe";
 
-import { env } from '@/env.mjs';
-import prisma from '@/lib/prisma';
-import { stripeServer } from '@/lib/stripe';
+import { env } from "@/env.mjs";
+import { db, users } from "@/lib/schema";
+import { stripeServer } from "@/lib/stripe";
 
 const webhookHandler = async (req: NextRequest) => {
   try {
     const buf = await req.text();
-    const sig = req.headers.get('stripe-signature')!;
+    const sig = req.headers.get("stripe-signature")!;
 
     let event: Stripe.Event;
 
@@ -16,7 +17,7 @@ const webhookHandler = async (req: NextRequest) => {
       event = stripeServer.webhooks.constructEvent(
         buf,
         sig,
-        env.STRIPE_WEBHOOK_SECRET_KEY
+        env.STRIPE_WEBHOOK_SECRET_KEY,
       );
     } catch (err) {
       return NextResponse.json(
@@ -25,22 +26,18 @@ const webhookHandler = async (req: NextRequest) => {
             message: `Webhook Error - ${err}`,
           },
         },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
     const subscription = event.data.object as Stripe.Subscription;
 
     switch (event.type) {
-      case 'customer.subscription.created':
-        await prisma.user.update({
-          where: {
-            stripeCustomerId: subscription.customer as string,
-          },
-          data: {
-            isActive: true,
-          },
-        });
+      case "customer.subscription.created":
+        await db
+          .update(users)
+          .set({ isActive: true })
+          .where(eq(users.stripeCustomerId, subscription.customer as string));
         break;
       default:
         break;
@@ -50,11 +47,11 @@ const webhookHandler = async (req: NextRequest) => {
     return NextResponse.json(
       {
         error: {
-          message: 'Method Not Allowed',
+          message: "Method Not Allowed",
         },
       },
-      { status: 405 }
-    ).headers.set('Allow', 'POST');
+      { status: 405 },
+    ).headers.set("Allow", "POST");
   }
 };
 

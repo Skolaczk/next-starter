@@ -1,68 +1,57 @@
-import '@/styles/globals.css';
+import "@/styles/globals.css";
 
-import { PropsWithChildren } from 'react';
-import { LanguageProvider } from '@inlang/paraglide-next';
-import type { Metadata } from 'next';
+import type { Metadata } from "next";
+import { PropsWithChildren } from "react";
 
-import { Footer } from '@/components/footer';
-import { Navbar } from '@/components/navbar/navbar';
-import { ThemeProvider } from '@/components/theme-provider';
-import { ThemeSwitcher } from '@/components/theme-switcher';
-import { Toaster } from '@/components/ui/toaster';
-import { siteConfig } from '@/lib/constant';
-import { fonts } from '@/lib/fonts';
-import { cn } from '@/lib/utils';
-import { languageTag } from '@/paraglide/runtime.js';
+import { ThemeProvider } from "@/components/theme-provider";
+import { ThemeSwitcher } from "@/components/theme-switcher";
+import { fonts } from "@/lib/fonts";
+import { siteConfig } from "@/lib/site-config";
+import { cn } from "@/lib/utils";
 
-export const generateMetadata = (): Metadata => ({
-  metadataBase: new URL(siteConfig.url()),
+export const metadata: Metadata = {
+  metadataBase: new URL(siteConfig.url),
   title: {
-    default: siteConfig.title(),
-    template: `%s | ${siteConfig.title()}`,
+    default: siteConfig.title,
+    template: `%s | ${siteConfig.title}`,
   },
-  description: siteConfig.description(),
-  keywords: siteConfig.keywords(),
+  description: siteConfig.description,
+  keywords: siteConfig.keywords,
   robots: { index: true, follow: true },
   icons: {
-    icon: '/favicon/favicon.ico',
-    shortcut: '/favicon/favicon-16x16.png',
-    apple: '/favicon/apple-touch-icon.png',
+    icon: "/favicon/favicon.ico",
+    shortcut: "/favicon/favicon-16x16.png",
+    apple: "/favicon/apple-touch-icon.png",
   },
   verification: {
-    google: siteConfig.googleSiteVerificationId(),
+    google: siteConfig.googleSiteVerificationId,
   },
   openGraph: {
-    url: siteConfig.url(),
-    title: siteConfig.title(),
-    description: siteConfig.description(),
-    siteName: siteConfig.title(),
-    images: '/opengraph-image.png',
-    type: 'website',
-    locale: languageTag(),
+    url: siteConfig.url,
+    title: siteConfig.title,
+    description: siteConfig.description,
+    siteName: siteConfig.title,
+    images: "/opengraph-image.jpg",
+    type: "website",
   },
   twitter: {
-    card: 'summary_large_image',
-    title: siteConfig.title(),
-    description: siteConfig.description(),
-    images: '/opengraph-image.png',
+    card: "summary_large_image",
+    title: siteConfig.title,
+    description: siteConfig.description,
+    images: "/opengraph-image.jpg",
   },
-});
+};
 
 const RootLayout = ({ children }: PropsWithChildren) => {
   return (
-    <LanguageProvider>
-      <html lang={languageTag()} suppressHydrationWarning>
-        <body className={cn('min-h-screen font-sans', fonts)}>
-          <ThemeProvider attribute="class">
-            <Navbar />
-            {children}
-            <ThemeSwitcher className="absolute bottom-5 right-5 z-10" />
-            <Footer />
-            <Toaster />
-          </ThemeProvider>
-        </body>
-      </html>
-    </LanguageProvider>
+    <html lang="en" suppressHydrationWarning>
+      <body className={cn("min-h-screen font-sans", fonts)}>
+        <ThemeProvider attribute="class">
+          {children}
+          <ThemeSwitcher className="absolute right-5 bottom-5 z-10" />
+        </ThemeProvider>
+      </body>
+    </html>
   );
 };
 

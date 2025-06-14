@@ -1,0 +1,36 @@
+name: Feature request
+description: Suggest an idea to improve the project.
+title: "[Feature] <short description>"
+labels: ["enhancement", "needs triage"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Thank you for contributing an idea!**
+        Please search existing issues first to avoid duplicates.
+  - type: textarea
+    id: summary
+    attributes:
+      label: What problem are you trying to solve?
+      description: Describe the limitation or pain point.
+      placeholder: I’m frustrated when…
+    validations:
+      required: true
+  - type: textarea
+    id: proposed-solution
+    attributes:
+      label: Proposed solution or feature
+      placeholder: It would be great if the project could…
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Have you tried work-arounds or other approaches?
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional context
+      description: Links, references, screenshots, mock-ups, etc.

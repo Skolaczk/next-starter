@@ -1,10 +1,11 @@
-'use client';
+"use client";
 
-import { ComponentProps } from 'react';
-import { ThemeProvider as NextThemesProvider } from 'next-themes';
+import { ThemeProvider as NextThemesProvider } from "next-themes";
+import * as React from "react";
 
-type ThemeProviderProps = ComponentProps<typeof NextThemesProvider>;
-
-export const ThemeProvider = ({ children, ...props }: ThemeProviderProps) => {
-  return <NextThemesProvider {...props}>{children}</NextThemesProvider>;
-};
+export const ThemeProvider = ({
+  children,
+  ...props
+}: React.ComponentProps<typeof NextThemesProvider>) => (
+  <NextThemesProvider {...props}>{children}</NextThemesProvider>
+);

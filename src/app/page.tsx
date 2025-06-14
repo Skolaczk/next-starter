@@ -1,37 +1,70 @@
-import { HeroForm } from '@/components/form';
-import { Icons } from '@/components/icons';
-import { Button } from '@/components/ui/button';
-import * as m from '@/paraglide/messages';
+import Link from "next/link";
 
-const Home = () => {
+import { AuthControls } from "@/components/auth-controls";
+import { Icons } from "@/components/icons";
+import { StripeButton } from "@/components/stripe-button";
+import { buttonVariants } from "@/components/ui/button";
+import { auth } from "@/lib/auth";
+
+const HomePage = async () => {
+  const session = await auth();
+
   return (
-    <section className="container mt-10 flex flex-col items-center gap-3 text-center md:absolute md:left-1/2 md:top-1/2 md:mt-0 md:-translate-x-1/2 md:-translate-y-1/2">
-      <h1 className="mb-1 font-mono text-3xl font-extrabold leading-tight tracking-tighter md:text-4xl">
-        {m.nextjs_starter_template_headline()}
-      </h1>
-      <p className="text-muted-foreground max-w-2xl">
-        {m.nextjs_starter_template_description()}
-      </p>
-      <div className="mt-1">
-        <HeroForm />
-      </div>
-      <div className="mt-2 flex gap-4">
-        <Button asChild>
-          <a
-            href="https://github.com/Skolaczk/next-starter/blob/main/README.md#getting-started"
+    <>
+      <header className="w-full border-b">
+        <div className="container flex h-16 items-center justify-between">
+          <Link href="/" className="font-mono text-lg font-bold">
+            next-starter
+          </Link>
+          <div className="flex items-center gap-2">
+            <AuthControls session={session} />
+          </div>
+        </div>
+      </header>
+      <section className="container mt-10 flex flex-col items-center gap-3 text-center md:absolute md:top-1/2 md:left-1/2 md:mt-0 md:-translate-x-1/2 md:-translate-y-1/2">
+        <h1 className="mb-1 font-mono text-4xl leading-tight font-extrabold tracking-tighter [word-spacing:-0.5rem] md:text-5xl">
+          <span className="bg-gradient-to-r from-rose-700 to-pink-600 bg-clip-text text-transparent">
+            Next.js
+          </span>{" "}
+          starter template
+        </h1>
+        <p className="text-muted-foreground max-w-2xl md:text-lg">
+          A Next.js starter template, packed with features like TypeScript,
+          Tailwind CSS, Next-auth, Eslint, Stripe, testing tools and more.
+          Jumpstart your project with efficiency and style.
+        </p>
+        <div className="mt-2 flex gap-4">
+          {session ? (
+            <StripeButton />
+          ) : (
+            <Link
+              href="https://github.com/Skolaczk/next-starter/blob/main/README.md#getting-started"
+              target="_blank"
+              className={buttonVariants({ size: "lg" })}
+            >
+              Get started
+            </Link>
+          )}
+          <Link
+            href="https://github.com/Skolaczk/next-starter"
             target="_blank"
+            className={buttonVariants({ variant: "outline", size: "lg" })}
           >
-            {m.get_started()}
-          </a>
-        </Button>
-        <Button variant="outline" asChild>
-          <a href="https://github.com/Skolaczk/next-starter" target="_blank">
-            <Icons.github className="mr-2 size-4" /> {m.github()}
-          </a>
-        </Button>
-      </div>
-    </section>
+            <Icons.github /> Github
+          </Link>
+        </div>
+      </section>
+      <footer className="text-muted-foreground absolute bottom-3 w-full text-center text-sm">
+        © {new Date().getFullYear()} By{" "}
+        <Link
+          href="https://michalskolak.pl"
+          className={buttonVariants({ variant: "link", className: "!p-0" })}
+        >
+          Michał Skolak
+        </Link>
+      </footer>
+    </>
   );
 };
 
-export default Home;
+export default HomePage;

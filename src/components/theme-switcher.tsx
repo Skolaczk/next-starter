@@ -1,14 +1,14 @@
-'use client';
+"use client";
 
-import { ComponentProps } from 'react';
-import { useTheme } from 'next-themes';
+import { useTheme } from "next-themes";
+import { ComponentProps } from "react";
 
-import { Icons } from '@/components/icons';
-import { Button } from '@/components/ui/button';
-import * as m from '@/paraglide/messages';
+import { Icons } from "@/components/icons";
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 type ThemeSwitcherProps = {
-  className?: ComponentProps<'button'>['className'];
+  className?: ComponentProps<"button">["className"];
 };
 
 export const ThemeSwitcher = ({ className }: ThemeSwitcherProps) => {
@@ -16,11 +16,11 @@ export const ThemeSwitcher = ({ className }: ThemeSwitcherProps) => {
 
   return (
     <Button
-      className={className}
-      variant="secondary"
+      onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+      className={cn("cursor-pointer", className)}
       size="icon"
-      aria-label={m.theme_toggle_label()}
-      onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
+      variant="outline"
+      aria-label="Toggle theme"
     >
       <Icons.sun className="dark:hidden" />
       <Icons.moon className="hidden dark:block" />

@@ -1,5 +1,5 @@
 <a href="https://next-starter-skolaczk.vercel.app/">
-<img src="https://github.com/Skolaczk/next-starter/assets/76774237/44b552ff-43aa-441f-b1d0-de9bdfc2a73f" alt="thubnail">
+<img src="/public/opengraph-image.jpg" alt="thumbnail">
 </a>
 <p align="center">
   <a href="#-features"><strong>Features</strong></a> ·
@@ -14,12 +14,11 @@
 - 🚀 Next.js 15 (App router)
 - ⚛️ React 19
 - 📘 Typescript
-- 🎨 TailwindCSS - Class sorting, merging and linting
+- 🎨 Tailwind CSS 4 - Class sorting, merging and linting
 - 🛠️ Shadcn/ui - Customizable UI components
 - 💵 Stripe - Payment handler
 - 🔒 Next-auth - Easy authentication library for Next.js (GitHub provider)
-- 🛡️ Prisma - ORM for node.js
-- 📋 React-hook-form - Manage your forms easy and efficient 
+- 🛡️ Drizzle - ORM for node.js
 - 🔍 Zod - Schema validation library
 - 🧪 Jest & React Testing Library - Configured for unit testing
 - 🎭 Playwright - Configured for e2e testing
@@ -34,7 +33,7 @@
 - ⚙️ T3-env - Manage your environment variables
 - 🗺️ Sitemap & robots.txt
 - 💯 Perfect Lighthouse score
-- 🌐 I18n with Paraglide
+- 💾 Neon database
 
 ## 🚀 Deployment
 Easily deploy your Next.js app with <a href="https://vercel.com/">Vercel</a> by clicking the button below:
@@ -53,7 +52,7 @@ Easily deploy your Next.js app with <a href="https://vercel.com/">Vercel</a> by 
    ```bash
    npx create-next-app -e https://github.com/Skolaczk/next-starter my-project-name
    ```
-    
+
 3. Using `git clone`
 
    ```bash
@@ -98,12 +97,8 @@ and open http://localhost:3000/ to see this app.
     ├── actions                     # Server actions
     ├── app                         # Next JS App (App Router)
     ├── components                  # React components
-    ├── hooks                       # Custom hooks
     ├── lib                         # Functions and utilities
     ├── styles                      # Styles folder
-    ├── types                       # Type definitions
-    ├── messages                    # Messages for i18n 
-    ├── paraglide                   # (generated) compiled i18n messages 
     └── env.mjs                     # Env variables config file
 ```
 
