@@ -4,7 +4,7 @@ import { env } from "@/env.mjs";
 
 export default defineConfig({
   dialect: "postgresql",
-  schema: "./src/drizzle/schema.ts",
+  schema: "./src/lib/schema.ts",
   dbCredentials: {
     url: env.DATABASE_URL,
   },

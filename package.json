@@ -28,6 +28,7 @@
     "@auth/drizzle-adapter": "^1.9.1",
     "@neondatabase/serverless": "^1.0.1",
     "@radix-ui/react-slot": "^1.2.3",
+    "@stripe/stripe-js": "^7.3.1",
     "@t3-oss/env-nextjs": "^0.13.6",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
@@ -38,6 +39,7 @@
     "next-themes": "^0.4.6",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "stripe": "^18.2.1",
     "tailwind-merge": "^3.3.0",
     "zod": "^3.25.51"
   },

@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import { AuthControls } from "@/components/auth-controls";
 import { Icons } from "@/components/icons";
+import { StripeButton } from "@/components/stripe-button";
 import { buttonVariants } from "@/components/ui/button";
 import { auth } from "@/lib/auth";
 
@@ -29,17 +30,21 @@ const HomePage = async () => {
         </h1>
         <p className="text-muted-foreground max-w-2xl md:text-lg">
           A Next.js starter template, packed with features like TypeScript,
-          Tailwind CSS, Next-auth, Eslint, Stripe, Paraglide, testing tools and
-          more. Jumpstart your project with efficiency and style.
+          Tailwind CSS, Next-auth, Eslint, Stripe, testing tools and more.
+          Jumpstart your project with efficiency and style.
         </p>
         <div className="mt-2 flex gap-4">
-          <Link
-            href="https://github.com/Skolaczk/next-starter/blob/main/README.md#getting-started"
-            target="_blank"
-            className={buttonVariants({ size: "lg" })}
-          >
-            Get started
-          </Link>
+          {session ? (
+            <StripeButton />
+          ) : (
+            <Link
+              href="https://github.com/Skolaczk/next-starter/blob/main/README.md#getting-started"
+              target="_blank"
+              className={buttonVariants({ size: "lg" })}
+            >
+              Get started
+            </Link>
+          )}
           <Link
             href="https://github.com/Skolaczk/next-starter"
             target="_blank"
