@@ -74,6 +74,7 @@
     "prettier": "^3.5.3",
     "prettier-plugin-tailwindcss": "^0.6.12",
     "tailwindcss": "^4",
+    "ts-jest": "^29.4.0",
     "tw-animate-css": "^1.3.4",
     "typescript": "^5",
     "typescript-eslint": "^8.34.0"
