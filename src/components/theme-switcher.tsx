@@ -19,7 +19,6 @@ export const ThemeSwitcher = ({ className }: ThemeSwitcherProps) => {
       onClick={() => setTheme(theme === "light" ? "dark" : "light")}
       className={cn("cursor-pointer", className)}
       size="icon"
-      variant="outline"
       aria-label="Toggle theme"
     >
       <Icons.sun className="dark:hidden" />
