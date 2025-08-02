@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { getTranslations } from "next-intl/server";
 
 import { AuthControls } from "@/components/auth-controls";
 import { Icons } from "@/components/icons";
@@ -8,12 +9,13 @@ import { auth } from "@/lib/auth";
 
 const HomePage = async () => {
   const session = await auth();
+  const t = await getTranslations("home");
 
   return (
     <>
       <header className="w-full border-b">
         <div className="container flex h-16 items-center justify-between">
-          <Link href="/" className="font-mono text-lg font-bold">
+          <Link href="#" className="font-mono text-lg font-bold">
             next-starter
           </Link>
           <div className="flex items-center gap-2">
@@ -29,9 +31,7 @@ const HomePage = async () => {
           starter template
         </h1>
         <p className="text-muted-foreground max-w-2xl md:text-lg">
-          A Next.js starter template, packed with features like TypeScript,
-          Tailwind CSS, Next-auth, Eslint, Stripe, testing tools and more.
-          Jumpstart your project with efficiency and style.
+          {t("subtitle")}
         </p>
         <div className="mt-2 flex gap-4">
           {session ? (
@@ -42,7 +42,7 @@ const HomePage = async () => {
               target="_blank"
               className={buttonVariants({ size: "lg" })}
             >
-              Get started
+              {t("getStartedButton")}
             </Link>
           )}
           <Link
@@ -55,7 +55,7 @@ const HomePage = async () => {
         </div>
       </section>
       <footer className="text-muted-foreground absolute bottom-3 w-full text-center text-sm">
-        © {new Date().getFullYear()} By{" "}
+        © {new Date().getFullYear()}{" "}
         <Link
           href="https://michalskolak.pl"
           className={buttonVariants({ variant: "link", className: "!p-0" })}

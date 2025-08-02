@@ -34,6 +34,7 @@
 - 🗺️ Sitemap & robots.txt
 - 💯 Perfect Lighthouse score
 - 💾 Neon database
+- 🌐 I18n with next-intl
 
 ## 🚀 Deployment
 Easily deploy your Next.js app with <a href="https://vercel.com/">Vercel</a> by clicking the button below:

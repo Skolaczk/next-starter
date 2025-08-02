@@ -1,10 +1,13 @@
 import "@/styles/globals.css";
 
 import type { Metadata } from "next";
-import { PropsWithChildren } from "react";
+import { notFound } from "next/navigation";
+import { hasLocale, NextIntlClientProvider } from "next-intl";
 
+import { LangSwitcher } from "@/components/lang-switcher";
 import { ThemeProvider } from "@/components/theme-provider";
 import { ThemeSwitcher } from "@/components/theme-switcher";
+import { routing } from "@/i18n/routing";
 import { fonts } from "@/lib/fonts";
 import { siteConfig } from "@/lib/site-config";
 import { cn } from "@/lib/utils";
@@ -42,14 +45,29 @@ export const metadata: Metadata = {
   },
 };
 
-const RootLayout = ({ children }: PropsWithChildren) => {
+const RootLayout = async ({
+  children,
+  params,
+}: {
+  children: React.ReactNode;
+  params: Promise<{ locale: string }>;
+}) => {
+  const { locale } = await params;
+
+  if (!hasLocale(routing.locales, locale)) {
+    notFound();
+  }
+
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang={locale} suppressHydrationWarning>
       <body className={cn("min-h-screen font-sans", fonts)}>
-        <ThemeProvider attribute="class">
-          {children}
-          <ThemeSwitcher className="absolute right-5 bottom-5 z-10" />
-        </ThemeProvider>
+        <NextIntlClientProvider>
+          <ThemeProvider attribute="class">
+            {children}
+            <LangSwitcher className="absolute right-5 bottom-16 z-10" />
+            <ThemeSwitcher className="absolute right-5 bottom-5 z-10" />
+          </ThemeProvider>
+        </NextIntlClientProvider>
       </body>
     </html>
   );
