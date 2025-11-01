@@ -24,5 +24,5 @@ export const createCheckoutSessionAction = async () => {
     cancel_url: env.APP_URL,
   });
 
-  return { id: checkoutSession.id };
+  return { id: checkoutSession.id, url: checkoutSession.url };
 };
