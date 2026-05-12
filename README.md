@@ -40,6 +40,7 @@
 Easily deploy your Next.js app with <a href="https://vercel.com/">Vercel</a> by clicking the button below:
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Skolaczk/next-starter)
+[![Deploy to PandaStack](https://dashboard.pandastack.io/deploy-button.svg)](https://dashboard.pandastack.io/deploy?repo=Skolaczk/next-starter&type=static&buildCmd=npm+run+build&outputDir=dist)
 
 ## 🎯 Getting started
 ### 1. Clone this template in one of three ways
