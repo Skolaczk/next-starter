@@ -2,7 +2,7 @@
   "home": {
     "signIn": "Zaloguj się",
     "signOut": "Wyloguj się",
-    "subtitle": "Szablon startowy Next.js, pełen funkcji takich jak TypeScript, Tailwind CSS, Next-auth, Eslint, Stripe, narzędzia testowe i wiele innych. Rozpocznij swój projekt wydajnie i stylowo.",
+    "subtitle": "Szablon startowy Next.js, pełen funkcji takich jak TypeScript, Tailwind CSS, Next-auth, Biome, Stripe, narzędzia testowe i wiele innych. Rozpocznij swój projekt wydajnie i stylowo.",
     "getStartedButton": "Zacznij"
   }
 }

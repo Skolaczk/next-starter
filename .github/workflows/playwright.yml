@@ -25,8 +25,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
       - name: Install dependencies
-        run: npm i
+        run: npm ci
       - name: Install playwright browsers
         run: npx playwright install --with-deps
       - name: Run tests

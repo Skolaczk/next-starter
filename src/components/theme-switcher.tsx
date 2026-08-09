@@ -1,7 +1,7 @@
 "use client";
 
 import { useTheme } from "next-themes";
-import { ComponentProps } from "react";
+import type { ComponentProps } from "react";
 
 import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";

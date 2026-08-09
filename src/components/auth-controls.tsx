@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Session } from "next-auth";
+import type { Session } from "next-auth";
 import { signIn, signOut } from "next-auth/react";
 import { useTranslations } from "next-intl";
 

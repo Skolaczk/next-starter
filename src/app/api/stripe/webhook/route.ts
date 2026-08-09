@@ -1,6 +1,6 @@
 import { eq } from "drizzle-orm";
-import { NextRequest, NextResponse } from "next/server";
-import Stripe from "stripe";
+import { type NextRequest, NextResponse } from "next/server";
+import type Stripe from "stripe";
 
 import { env } from "@/env.mjs";
 import { db, users } from "@/lib/schema";

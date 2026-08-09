@@ -15,7 +15,7 @@ export const StripeButton = () => {
   return (
     <Button
       onClick={handleCreateCheckoutSession}
-      className="text-foreground cursor-pointer bg-gradient-to-r from-rose-700 to-pink-600"
+      className="cursor-pointer bg-gradient-to-r from-rose-700 to-pink-600 text-foreground"
       size="lg"
     >
       Upgrade to PRO

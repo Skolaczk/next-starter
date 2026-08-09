@@ -11,7 +11,7 @@
 </p>
 
 ## 🎉 Features
-- 🚀 Next.js 15 (App router)
+- 🚀 Next.js 16 (App router)
 - ⚛️ React 19
 - 📘 Typescript
 - 🎨 Tailwind CSS 4 - Class sorting, merging and linting
@@ -23,8 +23,7 @@
 - 🧪 Jest & React Testing Library - Configured for unit testing
 - 🎭 Playwright - Configured for e2e testing
 - 📈 Absolute Import & Path Alias - Import components using `@/` prefix
-- 💅 Prettier - Code formatter
-- 🧹 Eslint - Code linting tool
+- 💅 Biome - Fast formatter and linter (replaces Eslint & Prettier)
 - 🐶 Husky & Lint Staged - Run scripts on your staged files before they are committed
 - 🔹 Icons - From Lucide
 - 🌑 Dark mode - With next-themes
@@ -40,9 +39,10 @@
 Easily deploy your Next.js app with <a href="https://vercel.com/">Vercel</a> by clicking the button below:
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Skolaczk/next-starter)
-[![Deploy to PandaStack](https://dashboard.pandastack.io/deploy-button.svg)](https://dashboard.pandastack.io/deploy?repo=Skolaczk/next-starter&type=static&buildCmd=npm+run+build&outputDir=dist)
 
 ## 🎯 Getting started
+> Requires Node.js 22 or newer.
+
 ### 1. Clone this template in one of three ways
 
 1. Using this repository as template
@@ -100,7 +100,7 @@ and open http://localhost:3000/ to see this app.
     ├── actions                     # Server actions
     ├── app                         # Next JS App (App Router)
     ├── components                  # React components
-    ├── lib                         # Functions, utilities, and Drizzle schema
+    ├── lib                         # Functions, utilities
     ├── styles                      # Styles folder
     └── env.mjs                     # Env variables config file
 ```
@@ -111,10 +111,12 @@ The following scripts are available in the `package.json`:
 - `build`: Build the app
 - `start`: Run production server
 - `preview`: Run `build` and `start` commands together
-- `lint`: Lint the code using Eslint
+- `lint`: Lint the code using Biome
 - `lint:fix`: Fix linting errors
 - `format:check`: Checks the code for proper formatting
 - `format:write`: Fix formatting issues
+- `check`: Run the linter and formatter together
+- `check:fix`: Fix linting and formatting issues in one go
 - `typecheck`: Type-check TypeScript without emitting files
 - `test`: Run unit tests
 - `test:watch`: Run unit tests in watch mode
@@ -135,4 +137,4 @@ To contribute, please follow these steps:
 
 If you liked the project, I will appreciate if you leave a star. 🌟😊
 
-Made by <a href="https://michalskolak.netlify.app/">Michał Skolak</a> 
+Made by <a href="https://michalskolak.vercel.app">Michał Skolak</a> 
