@@ -3,6 +3,7 @@ import { eq } from "drizzle-orm";
 import NextAuth from "next-auth";
 import type { Adapter } from "next-auth/adapters";
 import GitHubProvider from "next-auth/providers/github";
+import { cache } from "react";
 
 import { env } from "@/env.mjs";
 import { db, users } from "@/lib/schema";
@@ -45,3 +46,5 @@ export const { auth, handlers, signIn, signOut } = NextAuth({
     },
   },
 });
+
+export const getSession = cache(() => auth());

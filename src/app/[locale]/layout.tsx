@@ -1,8 +1,8 @@
 import "@/styles/globals.css";
 
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
-import { hasLocale, NextIntlClientProvider } from "next-intl";
+import { NextIntlClientProvider } from "next-intl";
+import { getLocale } from "next-intl/server";
 
 import { LangSwitcher } from "@/components/lang-switcher";
 import { ThemeProvider } from "@/components/theme-provider";
@@ -45,18 +45,11 @@ export const metadata: Metadata = {
   },
 };
 
-const RootLayout = async ({
-  children,
-  params,
-}: {
-  children: React.ReactNode;
-  params: Promise<{ locale: string }>;
-}) => {
-  const { locale } = await params;
+export const generateStaticParams = () =>
+  routing.locales.map((locale) => ({ locale }));
 
-  if (!hasLocale(routing.locales, locale)) {
-    notFound();
-  }
+const RootLayout = async ({ children }: { children: React.ReactNode }) => {
+  const locale = await getLocale();
 
   return (
     <html lang={locale} suppressHydrationWarning>

@@ -8,9 +8,6 @@ type LangSwitcherProps = {
   className?: ComponentProps<"a">["className"];
 };
 
-// A plain anchor forces a full document load. Switching locale swaps the whole
-// `[locale]` layout, and a client-side transition would remount next-themes'
-// inline script inside the React tree (pacocoursey/next-themes#385).
 export const LangSwitcher = ({ className }: LangSwitcherProps) => {
   const locale = useLocale();
 

@@ -1,7 +1,6 @@
 import { Moon, Sun } from "lucide-react";
 import type { SVGProps } from "react";
 
-// lucide-react dropped brand icons in v1, so the GitHub mark ships locally.
 const Github = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"

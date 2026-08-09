@@ -1,14 +1,15 @@
+import { cacheLife } from "next/cache";
 import Link from "next/link";
 import { getTranslations } from "next-intl/server";
+import { Suspense } from "react";
 
 import { AuthControls } from "@/components/auth-controls";
 import { Icons } from "@/components/icons";
 import { StripeButton } from "@/components/stripe-button";
 import { buttonVariants } from "@/components/ui/button";
-import { auth } from "@/lib/auth";
+import { getSession } from "@/lib/auth";
 
 const HomePage = async () => {
-  const session = await auth();
   const t = await getTranslations("home");
 
   return (
@@ -19,7 +20,13 @@ const HomePage = async () => {
             next-starter
           </Link>
           <div className="flex items-center gap-2">
-            <AuthControls session={session} />
+            <Suspense
+              fallback={
+                <div className="h-9 w-24 animate-pulse rounded-md bg-muted" />
+              }
+            >
+              <AuthSlot />
+            </Suspense>
           </div>
         </div>
       </header>
@@ -34,17 +41,13 @@ const HomePage = async () => {
           {t("subtitle")}
         </p>
         <div className="mt-2 flex gap-4">
-          {session ? (
-            <StripeButton />
-          ) : (
-            <Link
-              href="https://github.com/Skolaczk/next-starter/blob/main/README.md#getting-started"
-              target="_blank"
-              className={buttonVariants({ size: "lg" })}
-            >
-              {t("getStartedButton")}
-            </Link>
-          )}
+          <Suspense
+            fallback={
+              <div className="h-10 w-36 animate-pulse rounded-md bg-muted" />
+            }
+          >
+            <CallToActionSlot />
+          </Suspense>
           <Link
             href="https://github.com/Skolaczk/next-starter"
             target="_blank"
@@ -54,16 +57,49 @@ const HomePage = async () => {
           </Link>
         </div>
       </section>
-      <footer className="absolute bottom-3 w-full text-center text-muted-foreground text-sm">
-        © {new Date().getFullYear()}{" "}
-        <Link
-          href="https://michalskolak.pl"
-          className={buttonVariants({ variant: "link", className: "!p-0" })}
-        >
-          Michał Skolak
-        </Link>
-      </footer>
+      <Footer />
     </>
+  );
+};
+
+const AuthSlot = async () => {
+  const session = await getSession();
+
+  return <AuthControls session={session} />;
+};
+
+const CallToActionSlot = async () => {
+  const session = await getSession();
+
+  if (session) return <StripeButton />;
+
+  const t = await getTranslations("home");
+
+  return (
+    <Link
+      href="https://github.com/Skolaczk/next-starter/blob/main/README.md#getting-started"
+      target="_blank"
+      className={buttonVariants({ size: "lg" })}
+    >
+      {t("getStartedButton")}
+    </Link>
+  );
+};
+
+const Footer = async () => {
+  "use cache";
+  cacheLife("days");
+
+  return (
+    <footer className="absolute bottom-3 w-full text-center text-muted-foreground text-sm">
+      © {new Date().getFullYear()}{" "}
+      <Link
+        href="https://michalskolak.pl"
+        className={buttonVariants({ variant: "link", className: "!p-0" })}
+      >
+        Michał Skolak
+      </Link>
+    </footer>
   );
 };
 

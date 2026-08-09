@@ -11,7 +11,7 @@
 </p>
 
 ## 🎉 Features
-- 🚀 Next.js 16 (App router)
+- 🚀 Next.js 16 (App router, Cache components)
 - ⚛️ React 19
 - 📘 Typescript
 - 🎨 Tailwind CSS 4 - Class sorting, merging and linting
@@ -23,7 +23,7 @@
 - 🧪 Jest & React Testing Library - Configured for unit testing
 - 🎭 Playwright - Configured for e2e testing
 - 📈 Absolute Import & Path Alias - Import components using `@/` prefix
-- 💅 Biome - Fast formatter and linter (replaces Eslint & Prettier)
+- 💅 Biome - Fast formatter and linter
 - 🐶 Husky & Lint Staged - Run scripts on your staged files before they are committed
 - 🔹 Icons - From Lucide
 - 🌑 Dark mode - With next-themes
