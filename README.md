@@ -91,14 +91,15 @@ and open http://localhost:3000/ to see this app.
 .
 ├── .github                         # GitHub folder
 ├── .husky                          # Husky configuration
-├── prisma                          # Prisma schema and migrations
+├── drizzle                         # Drizzle migrations and metadata
+├── drizzle.config.ts               # Drizzle Kit configuration
 ├── public                          # Public assets folder
 └── src
     ├── __tests__                   # Unit and e2e tests
     ├── actions                     # Server actions
     ├── app                         # Next JS App (App Router)
     ├── components                  # React components
-    ├── lib                         # Functions and utilities
+    ├── lib                         # Functions, utilities, and Drizzle schema
     ├── styles                      # Styles folder
     └── env.mjs                     # Env variables config file
 ```
