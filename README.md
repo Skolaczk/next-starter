@@ -40,6 +40,14 @@ Easily deploy your Next.js app with <a href="https://vercel.com/">Vercel</a> by 
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Skolaczk/next-starter)
 
+### Deploy on Deplo
+
+Copy this starter into your Git account and deploy it on your own [Deplo](https://deplo.build) instance:
+
+[![Deploy on Deplo](https://deplo.build/button.svg)](https://deplo.build/deploy?repo=https://github.com/Skolaczk/next-starter)
+
+Requires Deplo 0.8.2 or later. Set the variables listed in [`.env.example`](./.env.example) in Deplo before deploying, including your database, authentication, and Stripe credentials. See the [deploy button guide](https://deplo.build/docs/guides/deploy/deploy-button) for details.
+
 ## 🎯 Getting started
 > Requires Node.js 22 or newer.
 
